@@ -1,0 +1,151 @@
+commands:
+
+to install node.js - npm init -y
+
+for node_modules - npm i
+
+for express - npm i express
+
+for dotenv - npm i dotenv
+
+
+> middleware : server num client num idayil act cheyyunnu
+
+
+=> CORS : Cross Origin Resource Sharing
+--------------------------------------
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) 
+other than its own from which a browser should permit loading resources.
+
+npm i cors
+
+
+
+=>S/W Development Architecture:
+--------------------------------
+. here we use MVC
+  other architectures are MVT,MVVM etc.
+
+  MVC : Model-View-Controller
+
+> Controller consist of request handlers
+  request handler functionl 2 parameters ndavum, 1st one is request and 2nd one is response.
+
+
+> nodemon :
+. node.js command tool which give ability to re-render/re-compile program in runtime while code changes in realtime
+
+
+
+- what is db
+    > A database is a structured collection of data that's stored electronically on a computer system.
+
+- what is dbms
+    > A Database Management System (DBMS) is a software system that allows users to store, retrieve, and manipulate data in a database. 
+    > DBMSs act as an interface between the database and the user, allowing users to create, read, update, and delete data.
+
+- what is rdbms
+    > RDBMS stands for relational database management system, which is a program that allows users to create, update, and manage 
+      relational databases.
+
+- what is sql-based dbms
+    > Structured query language (SQL) is a programming language for storing and processing information in a relational database.
+    > A relational database stores information in tabular form, with rows and columns representing different data attributes and the 
+      various relationships between the data values.
+    > Can use SQL statements to store, update, remove, search, and retrieve information from the database. 
+
+- what is schema
+    > Schema is a blueprint that defines the structure and organization of a database. 
+    > It describes how data is stored and organized, and how different elements of the database relate to each other.
+    > In MySQL, Table is schema
+
+- what are keys,fields,rows,entities (column=field=key=attribute)
+    > Key : is an attribute/a set of attributes that help us identify a row (or tuple) uniquely in a table (or relation).
+    > Field : is an attribute of a record in a database table.
+    > Row : is a single group of related data within a table.
+    > Entity : is a piece of data that is stored in the database.
+
+- what is primary-key
+    > Primary key is a unique identifier for each record in a database table.
+    > Which in NOT-NULL
+
+- what is entity relationship
+    > An entity relationship (ER) model in a database management system (DBMS) is a diagram that illustrates how entities are related to 
+      each  other in a database
+
+
+
+==> MONGO DB
+-------------
+- what is mongodb
+    > its a no-sql, non-relational dbms
+
+  --> features of mongodb :
+      > no-sql
+      > no entity relationships
+      > every entities stored in mongodb will be independent of each other
+      > can handle larger amount of data easily
+      > schemaless
+      > data stored in json-document format
+      > data stored as BSON(Binary-JSON) data
+      > indexing
+      > rich-query language
+      > replication
+
+  --> difference b/w mongodb & mysql
+
+    MYSQL                       MngoDB
+    -database                   -database
+    -table                      -collection
+    -row/tuple/entity           -documents
+    -column/keys/attributes/    -field
+     fields                     
+    -primary key                -objectId
+
+
+=> mongoose : (object-model create cheyyan vendi use cheyyunnu)
+  - a node.js library which act as as an object-model tool
+  - helps in connection,data validation etc
+  - object-models/models are simply schemas(structure) which helps in data validation
+
+
+POSTMAN :
+----------
+> install -> new -> http -> body -> raw -> json(if it's not, then change into json) 
+     
+
+JWT(JSON Web Token) :
+----------------------
+- authentication mechanism used for secure implementation of user verification
+- creates a random character set(called token) while use login into the s/m, and verifies when further requests are made by 
+  userafter authentication
+- jsonwebtoken is a third party package used with node.js for jwt authentication
+- sign() method for token generation, and verify() method for token verification
+ --------                                ----------
+- sign(payload,secret/privte_key) = payload is a piece of data that used to embed in token(a piece of data that specifies user)
+  verify(token,secret/private_key) = token will be the given token value to user
+  secret/private_key is simply a string that used to sign and verify same tokens
+
+> installation
+  npm i jsonwebtoken
+
+
+Integrating front-end and backend :
+------------------------------------
+
+
+
+Middlewares:
+-------------
+> special function that can access and act b/w client and server before the request hits on serverside
+
+    const middleware=(req,res,next)=>{
+      next()
+    }
+
+
+= Application level middleware : middleware that implemented into an entire server
+eg:- cors(),json()
+
+= Router level middleware : middleware that implemented into a specific route only
+eg:- addproject
